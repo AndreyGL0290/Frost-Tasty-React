@@ -8,11 +8,11 @@ import './App.css';
 function App() {
   return (
     <Routes>
-    <Route index element={<Home />} />
-    <Route path="/" element={<Home />} />
-    <Route path="products" element={<Products />}/>
-    <Route path="basket" element={<Basket />}/>
-    <Route path='*' element={<NoMatch/>}/>
+      <Route index element={<Home />} />
+      <Route path="/" element={<Home />} />
+      <Route path="products" element={<Products />}/>
+      <Route path="basket" element={<Basket />}/>
+      <Route path='*' element={<NoMatch/>}/>
     </Routes>
   );
 }
