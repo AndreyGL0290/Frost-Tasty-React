@@ -9,9 +9,9 @@ function App() {
   return (
     <Routes>
       <Route index element={<Home />} />
-      <Route path="/" element={<Home />} />
-      <Route path="products" element={<Products />}/>
-      <Route path="basket" element={<Basket />}/>
+      <Route path="Frost-Tasty-React" element={<Home />} />
+      <Route path="Frost-Tasty-React/products" element={<Products />}/>
+      <Route path="Frost-Tasty-React/basket" element={<Basket />}/>
       <Route path='*' element={<NoMatch/>}/>
     </Routes>
   );
