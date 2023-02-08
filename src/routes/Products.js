@@ -43,7 +43,7 @@ const ProductCard = (props) => {
 
 const BasketButton = () => {
     if (basket.products.length == 0) return (<></>)
-    else return (<Link to="../basket" className="basket-button">Перейти в корзину</Link>)
+    else return (<div className="basket-button-container"><Link to="../basket" className="basket-button">Перейти в корзину</Link></div>)
 }
 
 const CardFooter = (props) => {
