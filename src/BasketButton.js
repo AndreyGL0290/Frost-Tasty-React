@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { basket } from "./index"
+import basket from "./basket"
 
 const BasketButton = () => {
     if (Object.keys(basket.products).length == 0) {

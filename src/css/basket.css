@@ -6,11 +6,11 @@
     justify-content: center;
 }
 
-.in-basket-product{
+.product-container{
     display: flex;
     align-items: center;
     border: 2px;
-    margin: 0% 10%;
+    margin: 10px 10%;
     justify-content: space-between;
 }
 
@@ -43,7 +43,7 @@
     width: 32px;
     height: 32px;
     background-repeat: no-repeat;
-    background-image: url('../images/system/eye.png');
+    background-image: url('../../public/images/system/eye.png');
 }
 
 .delete-button{
@@ -52,7 +52,7 @@
     width: 32px;
     height: 32px;
     background-repeat: no-repeat;
-    background-image: url('../images/system/cross.png');
+    background-image: url('../../public/images/system/cross.png');
 }
 
 .after-label-container{

@@ -1,19 +1,23 @@
 import { Link, useLocation } from "react-router-dom"
 import BasketButton from "../BasketButton"
-import { basket } from "../index"
 import { useState } from "react"
+import basket from "../basket"
 import '../css/products.css'
 import menu from '../menu'
 
 const Products = () => {
     const location = useLocation()
-
-    let [isEmpty, setBoolean] = useState(!!Object.keys(basket.products).length)
+    console.log(basket.products)
+    let [isEmpty, setBoolean] = useState(!Object.keys(basket.products).length)
 
     let data = []
     
     for (let i = 0; i < Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]]).length; i++){
         if (typeof menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]] === 'object') {
+            if (basket.getProduct(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].name)) {
+                data.push(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]])
+                continue
+            }
             menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].parent = location.hash.split('#')[location.hash.split('#').length-1]
             menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].state = {isEmpty: isEmpty, setBoolean: setBoolean}
             data.push(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]])
@@ -23,7 +27,11 @@ const Products = () => {
     return (
     <>
         <div className="inner-container">
-            {data.map(ProductCard)}
+            {data.map(props => {
+                return (
+                    <ProductCard key={props.name} product={props}/>
+                )
+            })}
         </div>
         <BasketButton />
     </>
@@ -31,6 +39,7 @@ const Products = () => {
 }
 
 const ProductCard = (props) => {
+    props = props.product
     let price = props.price + props.postfix || props.price + ' ₾/кг'
 
     return (
@@ -55,7 +64,7 @@ const CardFooter = (props) => {
                 setQuantity(quantity + 1)
                 basket.addProduct(props.name, {name: props.name, parent: props.product.parent, price: props.product.price})
 
-                props.state.setBoolean(true)
+                props.state.setBoolean(false)
             }}>Добавить</a>
         )
     }
@@ -72,7 +81,7 @@ const CardFooter = (props) => {
                         basket.deleteProduct(props.name)
                     }
 
-                    if (Object.keys(basket.products).length == 0) props.state.setBoolean(false)
+                    if (Object.keys(basket.products).length == 0) props.state.setBoolean(true)
                 }}
                 src={process.env.PUBLIC_URL + '/images/system/minus.png'}></img>
 
