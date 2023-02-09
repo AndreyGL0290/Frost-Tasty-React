@@ -1,0 +1,64 @@
+.basket-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.in-basket-product{
+    display: flex;
+    align-items: center;
+    border: 2px;
+    margin: 0% 10%;
+    justify-content: space-between;
+}
+
+.images-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+}
+
+.product-label{
+    width: 70%;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+.add-content-container {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.show-product-button{
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-image: url('../images/system/eye.png');
+}
+
+.delete-button{
+    display: block;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-image: url('../images/system/cross.png');
+}
+
+.after-label-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

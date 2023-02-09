@@ -1,17 +1,21 @@
 import { Link, useLocation } from "react-router-dom"
+import BasketButton from "../BasketButton"
+import { basket } from "../index"
 import { useState } from "react"
-import menu from '../menu'
 import '../css/products.css'
-import { basket } from '../index'
+import menu from '../menu'
 
 const Products = () => {
     const location = useLocation()
 
+    let [isEmpty, setBoolean] = useState(!!Object.keys(basket.products).length)
+
     let data = []
-    console.log(Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]]))
+    
     for (let i = 0; i < Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]]).length; i++){
         if (typeof menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]] === 'object') {
             menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].parent = location.hash.split('#')[location.hash.split('#').length-1]
+            menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].state = {isEmpty: isEmpty, setBoolean: setBoolean}
             data.push(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]])
         }
     }
@@ -29,31 +33,29 @@ const Products = () => {
 const ProductCard = (props) => {
     let price = props.price + props.postfix || props.price + ' ₾/кг'
 
-    // const [quantity, setQuantity] = useState(0)
-
     return (
     <div className="card" key={props.key}>
             <span className="card-label">{props.name}</span>
             <img className="card-image" src={process.env.PUBLIC_URL + props.imagePath} alt="Here should be an image"></img>
             <span className="card-price">{price}</span>
-            <CardFooter name={props.name} product={props}/>
+            <CardFooter name={props.name} product={props} state={props.state}/>
     </div>
     )
 }
 
-const BasketButton = () => {
-    if (basket.products.length == 0) return (<></>)
-    else return (<div className="basket-button-container"><Link to="../basket" className="basket-button">Перейти в корзину</Link></div>)
-}
-
 const CardFooter = (props) => {
-    const [quantity, setQuantity] = useState(0)
-    console.log(basket.products)
+    let startValue
+    if (basket.products[props.name]) startValue = basket.products[props.name].quantity.get()
+    else startValue = 0
+    const [quantity, setQuantity] = useState(startValue)
+
     if (quantity == 0){
         return (
             <a className="card-button" onClick={() => {
                 setQuantity(quantity + 1)
-                basket.addProduct(props.name, props.product)
+                basket.addProduct(props.name, {name: props.name, parent: props.product.parent, price: props.product.price})
+
+                props.state.setBoolean(true)
             }}>Добавить</a>
         )
     }
@@ -65,6 +67,12 @@ const CardFooter = (props) => {
                 onClick={() => {
                     setQuantity(quantity - 1)
                     basket.products[props.name].quantity.set(-1)
+
+                    if (basket.products[props.name].quantity.get() == 0){
+                        basket.deleteProduct(props.name)
+                    }
+
+                    if (Object.keys(basket.products).length == 0) props.state.setBoolean(false)
                 }}
                 src={process.env.PUBLIC_URL + '/images/system/minus.png'}></img>
 

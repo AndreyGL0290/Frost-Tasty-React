@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import BasketButton from "../BasketButton"
+import { Link } from "react-router-dom"
 
 const Home = (props) => {
     let data = []
@@ -9,9 +10,12 @@ const Home = (props) => {
     }
 
     return (
+    <>
     <div className="inner-container">
         {data.map(GroupCard)}
     </div>
+    <BasketButton />
+    </>
     )
 }
 
