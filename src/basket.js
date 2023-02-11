@@ -16,7 +16,6 @@ class Quantity{
 // Here all products that user chooses are stored
 class Basket{
     constructor(){
-        console.log('initialized basket')
         this.products = {}
     }
 
@@ -30,7 +29,6 @@ class Basket{
     }
 
     deleteProduct(name){
-        console.log('deleted: ', this.products[name])
         delete this.products[name]
     }
 }
