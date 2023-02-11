@@ -9,6 +9,7 @@ import './css/App.css'
 
 function App() {
   console.log(window.location)
+  window.location.replace("https://andreygl0290.github.io/Frost-Tasty-React/")
   return (
       <div className="middle-container">
         <Routes>
