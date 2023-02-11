@@ -8,6 +8,7 @@ import menu from './menu'
 import './css/App.css'
 
 function App() {
+  console.log(window.location)
   return (
       <div className="middle-container">
         <Routes>
