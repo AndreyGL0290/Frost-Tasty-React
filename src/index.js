@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, BrowserRouter } from 'react-router-dom';
 
+let tg = window.Telegram.WebApp
+tg.expand()
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // For the production use HashRouter
-  <HashRouter>
+  <BrowserRouter>
     <App />
-  </HashRouter>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
