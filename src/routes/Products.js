@@ -1,25 +1,35 @@
 import { Link, useLocation } from "react-router-dom"
-import BasketButton from "../BasketButton"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import basket from "../basket"
 import '../css/products.css'
 import menu from '../menu'
 
 const Products = () => {
     const location = useLocation()
-    console.log(basket.products)
-    let [isEmpty, setBoolean] = useState(!Object.keys(basket.products).length)
+    let [products, setProducts] = useState([])
+    let [button, setButton] = useState(<></>)
+    
+    
+    useEffect(() => {
+        setButton(
+        <div className="basket-button-container">
+            <Link to="../basket" className="basket-button">Перейти в корзину</Link>
+        </div>
+        )
+        if (Object.keys(basket.products).length == 0) setButton(<></>)
+    }, [products])
 
     let data = []
     
     for (let i = 0; i < Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]]).length; i++){
         if (typeof menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]] === 'object') {
             if (basket.getProduct(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].name)) {
+                menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].state = {products: products, setProducts: setProducts}
                 data.push(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]])
                 continue
             }
             menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].parent = location.hash.split('#')[location.hash.split('#').length-1]
-            menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].state = {isEmpty: isEmpty, setBoolean: setBoolean}
+            menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].state = {products: products, setProducts: setProducts}
             data.push(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]])
         }
     }
@@ -33,7 +43,7 @@ const Products = () => {
                 )
             })}
         </div>
-        <BasketButton />
+        {button}
     </>
     )
 }
@@ -47,7 +57,7 @@ const ProductCard = (props) => {
             <span className="card-label">{props.name}</span>
             <img className="card-image" src={process.env.PUBLIC_URL + props.imagePath} alt="Here should be an image"></img>
             <span className="card-price">{price}</span>
-            <CardFooter name={props.name} product={props} state={props.state}/>
+            <CardFooter name={props.name} product={props} state={props.state} />
     </div>
     )
 }
@@ -64,7 +74,10 @@ const CardFooter = (props) => {
                 setQuantity(quantity + 1)
                 basket.addProduct(props.name, {name: props.name, parent: props.product.parent, price: props.product.price})
 
-                props.state.setBoolean(false)
+                
+                
+                props.state.setProducts(Object.keys(basket.products))
+                
             }}>Добавить</a>
         )
     }
@@ -76,12 +89,18 @@ const CardFooter = (props) => {
                 onClick={() => {
                     setQuantity(quantity - 1)
                     basket.products[props.name].quantity.set(-1)
-
+                    
                     if (basket.products[props.name].quantity.get() == 0){
                         basket.deleteProduct(props.name)
                     }
 
-                    if (Object.keys(basket.products).length == 0) props.state.setBoolean(true)
+                    
+                    // if (Object.keys(basket.products).length == 0) {
+                        
+                        props.state.setProducts(Object.keys(basket.products))
+                        console.log(props.state.products)
+                    // }
+
                 }}
                 src={process.env.PUBLIC_URL + '/images/system/minus.png'}></img>
 
