@@ -25,6 +25,6 @@ class Basket{
 
 const basket = new Basket()
 
-if (localStorage.getItem('products') !== null) basket.products = JSON.parse(localStorage.getItem('products'))
+if (sessionStorage.getItem('products') !== null) basket.products = JSON.parse(sessionStorage.getItem('products'))
 
 export default basket

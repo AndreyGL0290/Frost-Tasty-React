@@ -5,8 +5,9 @@ import tg from '../telegram'
 import '../css/basket.css'
 
 const Basket = () => {
-    window.localStorage.setItem('products', JSON.stringify(basket.products))
-    tg.MainButton.show()
+    window.sessionStorage.setItem('products', JSON.stringify(basket.products))
+    if (!tg.BackButton.isVisible) tg.BackButton.show()
+    if (!tg.MainButton.isVisible) tg.MainButton.show()
 
     let [x, setDelete] = useState(false)
 

@@ -6,15 +6,14 @@ import '../css/products.css'
 import menu from '../menu'
 
 const Products = () => {
-    window.localStorage.setItem('products', JSON.stringify(basket.products))
     if (tg.MainButton.isVisible) tg.MainButton.hide()
+    if (!tg.BackButton.isVisible) tg.BackButton.show()
 
     const location = useLocation()
     let [products, setProducts] = useState([])
     let [button, setButton] = useState(<></>)
     
     useEffect(() => {
-        console.log(button)
         setButton(
         <div className="basket-button-container">
             <Link to="../basket" className="basket-button">Перейти в корзину</Link>
@@ -77,11 +76,9 @@ const CardFooter = (props) => {
             <a className="card-button" onClick={() => {
                 setQuantity(quantity + 1)
                 basket.addProduct(props.name, {name: props.name, parent: props.product.parent, price: props.product.price})
+                window.sessionStorage.setItem('products', JSON.stringify(basket.products))
 
-                
-                console.log(basket.products)
-                if (Object.keys(basket.products).length <= 1) props.state.setProducts(Object.keys(basket.products))
-                
+                if (Object.keys(basket.products).length <= 1) props.state.setProducts(Object.keys(basket.products))                
             }}>Добавить</a>
         )
     }
@@ -93,6 +90,7 @@ const CardFooter = (props) => {
                 onClick={() => {
                     setQuantity(quantity - 1)
                     basket.setQuantity(props.name, -1)
+                    window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                     
                     if (Object.keys(basket.products).length == 0) props.state.setProducts([])
 
@@ -100,11 +98,13 @@ const CardFooter = (props) => {
                 src={process.env.PUBLIC_URL + '/images/system/minus.png'}></img>
 
                 <span className="quantity-label">{quantity}</span>
+
                 <img
                 className="plus-sign"
                 onClick={() => {
                     setQuantity(quantity + 1)
                     basket.setQuantity(props.name, 1)
+                    window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                 }}
                 src={process.env.PUBLIC_URL + '/images/system/plus.png'}></img>
             </div>

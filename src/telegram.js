@@ -8,7 +8,6 @@ tg.MainButton.textColor = '#000000'
 tg.MainButton.text = "Подтвердить заказ"
 
 tg.MainButton.onClick(() => {
-    window.localStorage.clear()
     let data = {}
 
     // Shortens basket product data so only valuable information is send
@@ -17,6 +16,10 @@ tg.MainButton.onClick(() => {
     }
 
     tg.sendData(JSON.stringify(data))
+})
+
+tg.BackButton.onClick(() => {
+    window.location.href = "https://andreygl0290.github.io/Frost-Tasty-React/#/"
 })
 
 export default tg
