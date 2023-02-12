@@ -4,8 +4,8 @@ import './css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, BrowserRouter } from 'react-router-dom';
+import tg from './telegram'
 
-let tg = window.Telegram.WebApp
 tg.expand()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
