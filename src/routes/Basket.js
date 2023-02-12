@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import basket from "../basket"
+import tg from '../telegram'
 import '../css/basket.css'
 
 const Basket = () => {
+    window.localStorage.setItem('products', JSON.stringify(basket.products))
+    tg.MainButton.show()
+
     let [x, setDelete] = useState(false)
-    
+
     if (Object.keys(basket.products).length == 0)
     return (
         <div className="after-label-container">
@@ -41,8 +45,8 @@ const BasketCard = (props) => {
                 <span className='product-label'>{props.product.name}</span>
             </div>
             <div className='add-content-container'>
-                <span className='product-quantity'>{props.product.quantity.get()}</span>
-                <span className='product-price'>{props.product.price*props.product.quantity.get()} ₾</span>
+                <span className='product-quantity'>{props.product.quantity}</span>
+                <span className='product-price'>{props.product.price*props.product.quantity} ₾</span>
             </div>
         </div>
     )

@@ -1,16 +1,20 @@
 import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import basket from "../basket"
+import tg from '../telegram'
 import '../css/products.css'
 import menu from '../menu'
 
 const Products = () => {
+    window.localStorage.setItem('products', JSON.stringify(basket.products))
+    if (tg.MainButton.isVisible) tg.MainButton.hide()
+
     const location = useLocation()
     let [products, setProducts] = useState([])
     let [button, setButton] = useState(<></>)
     
-    
     useEffect(() => {
+        console.log(button)
         setButton(
         <div className="basket-button-container">
             <Link to="../basket" className="basket-button">Перейти в корзину</Link>
@@ -64,7 +68,7 @@ const ProductCard = (props) => {
 
 const CardFooter = (props) => {
     let startValue
-    if (basket.products[props.name]) startValue = basket.products[props.name].quantity.get()
+    if (basket.products[props.name]) startValue = basket.products[props.name].quantity
     else startValue = 0
     const [quantity, setQuantity] = useState(startValue)
 
@@ -75,8 +79,8 @@ const CardFooter = (props) => {
                 basket.addProduct(props.name, {name: props.name, parent: props.product.parent, price: props.product.price})
 
                 
-                
-                props.state.setProducts(Object.keys(basket.products))
+                console.log(basket.products)
+                if (Object.keys(basket.products).length <= 1) props.state.setProducts(Object.keys(basket.products))
                 
             }}>Добавить</a>
         )
@@ -88,18 +92,9 @@ const CardFooter = (props) => {
                 className="minus-sign"
                 onClick={() => {
                     setQuantity(quantity - 1)
-                    basket.products[props.name].quantity.set(-1)
+                    basket.setQuantity(props.name, -1)
                     
-                    if (basket.products[props.name].quantity.get() == 0){
-                        basket.deleteProduct(props.name)
-                    }
-
-                    
-                    // if (Object.keys(basket.products).length == 0) {
-                        
-                        props.state.setProducts(Object.keys(basket.products))
-                        console.log(props.state.products)
-                    // }
+                    if (Object.keys(basket.products).length == 0) props.state.setProducts([])
 
                 }}
                 src={process.env.PUBLIC_URL + '/images/system/minus.png'}></img>
@@ -109,7 +104,7 @@ const CardFooter = (props) => {
                 className="plus-sign"
                 onClick={() => {
                     setQuantity(quantity + 1)
-                    basket.products[props.name].quantity.set(+1)
+                    basket.setQuantity(props.name, 1)
                 }}
                 src={process.env.PUBLIC_URL + '/images/system/plus.png'}></img>
             </div>
