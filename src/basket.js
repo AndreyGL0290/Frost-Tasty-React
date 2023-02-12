@@ -1,27 +1,17 @@
-// Represents amount of chosen product
-class Quantity{
-    constructor(){
-        this.quantity = 1
-    }
-    
-    get(){
-        return this.quantity
-    }
-
-    set(changer){
-        this.quantity += changer
-    }
-}
-
 // Here all products that user chooses are stored
 class Basket{
     constructor(){
         this.products = {}
     }
 
+    setQuantity(name, quantity){
+        this.products[name].quantity += quantity
+        if (this.products[name].quantity == 0) this.deleteProduct(name)
+    }
+
     addProduct(name, product){
         this.products[name] = product
-        this.products[name].quantity = new Quantity()
+        this.products[name].quantity = 1
     }
 
     getProduct(name){
@@ -34,5 +24,7 @@ class Basket{
 }
 
 const basket = new Basket()
+
+if (localStorage.getItem('products') !== null) basket.products = JSON.parse(localStorage.getItem('products'))
 
 export default basket
