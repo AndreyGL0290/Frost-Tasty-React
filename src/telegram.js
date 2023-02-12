@@ -5,6 +5,8 @@ let tg = window.Telegram.WebApp
 tg.MainButton.color = '#FFBF00'
 tg.MainButton.textColor = '#000000'
 
+tg.MainButton.text = "Подтвердить заказ"
+
 tg.MainButton.onClick(() => {
     window.localStorage.clear()
     let data = {}
