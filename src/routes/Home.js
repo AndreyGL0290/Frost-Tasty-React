@@ -40,7 +40,6 @@ const Home = props => {
 
 const GroupCard = props => {
     props = props.groups
-    console.log(props)
     return (
         <div className="card">
             <span className="card-label">{props.name}</span>
