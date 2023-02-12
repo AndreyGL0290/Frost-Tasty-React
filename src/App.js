@@ -3,14 +3,10 @@ import Products from "./routes/Products"
 import NoMatch from "./routes/NoMatch"
 import Basket from "./routes/Basket"
 import Home from "./routes/Home"
-import basket from "./basket"
 import menu from './menu'
 import './css/App.css'
 
 function App() {
-  console.log(window.location)
-  let noHashURL = window.location.href.replace(/#.*$/, '');
-  window.history.replaceState('', document.title, noHashURL)
   return (
       <div className="middle-container">
         <Routes>
