@@ -7,15 +7,8 @@ const Home = props => {
     if (tg.BackButton.isVisible) tg.BackButton.hide()
 
     let basketButton = <></>
-    if (Object.keys(basket.products).length == 0) {
-        basketButton = <></>
-    } else {
-        basketButton =(
-        <div className="basket-button-container">
-            <Link to="../basket" className="basket-button">Перейти в корзину</Link>
-        </div>
-        )
-    }
+    if (Object.keys(basket.products).length == 0) basketButton = <></>
+    else basketButton = <div className="basket-button-container"><Link to="../basket" className="basket-button">Перейти в корзину</Link></div>
 
     let data = []
     for (let i = 0; i < Object.keys(props.groups).length; i++){
