@@ -8,6 +8,8 @@ tg.MainButton.textColor = '#000000'
 tg.MainButton.text = "Подтвердить заказ"
 
 tg.MainButton.onClick(() => {
+    window.sessionStorage.clear()
+    
     let data = {}
 
     // Shortens basket product data so only valuable information is send
