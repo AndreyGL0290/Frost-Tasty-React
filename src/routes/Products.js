@@ -87,28 +87,28 @@ const CardFooter = (props) => {
     else{
         return (
             <div className="product-menu-container">
-                <img
-                className="minus-sign"
+                <svg className="system-image" viewBox="0 0 100 100"
                 onClick={() => {
                     setQuantity(quantity - 1)
                     basket.setQuantity(props.name, -1)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                     
                     if (Object.keys(basket.products).length == 0) props.state.setProducts([])
-
-                }}
-                src={process.env.PUBLIC_URL + '/images/system/minus.png'}></img>
+                }}>
+                    <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="10"/>
+                </svg>
 
                 <span className="quantity-label">{quantity}</span>
 
-                <img
-                className="plus-sign"
+                <svg className="system-image" viewBox="0 0 100 100"
                 onClick={() => {
                     setQuantity(quantity + 1)
                     basket.setQuantity(props.name, 1)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
-                }}
-                src={process.env.PUBLIC_URL + '/images/system/plus.png'}></img>
+                }}>
+                    <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="10"/>
+                    <line x1="50" y1="0" x2="50" y2="100" stroke="black" stroke-width="10"/>
+                </svg>
             </div>
         )
     }

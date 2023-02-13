@@ -28,16 +28,11 @@
     width: 100%;
 }
 
-.plus-sign{
-    max-width: 24px;
-    max-height: 24px;
-}
-
 .quantity-label{
     font-size: 30px;
 }
 
-.minus-sign{
-    max-width: 24px;
-    max-height: 24px;
+.system-image{
+    max-width: 30px;
+    max-height: 30px;
 }
