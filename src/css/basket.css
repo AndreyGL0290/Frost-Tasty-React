@@ -38,23 +38,6 @@
     align-items: center;
 }
 
-.show-product-button{
-    display: block;
-    width: 32px;
-    height: 32px;
-    background-repeat: no-repeat;
-    background-image: url('../../public/images/system/eye.png');
-}
-
-.delete-button{
-    display: block;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    background-repeat: no-repeat;
-    background-image: url('../../public/images/system/cross.png');
-}
-
 .after-label-container{
     height: 100%;
     display: flex;
