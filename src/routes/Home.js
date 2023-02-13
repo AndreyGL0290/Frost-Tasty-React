@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
+import '../css/placeholder.css'
 import basket from "../basket"
 import tg from "../telegram"
+import Image from "./Image"
 
 const Home = props => {
     if (tg.MainButton.isVisible) tg.MainButton.hide()
@@ -36,7 +38,8 @@ const GroupCard = props => {
     return (
         <div className="card">
             <span className="card-label">{props.name}</span>
-            <img className="card-image" src={process.env.PUBLIC_URL + props.imagePath} alt="Here should be an image"></img>
+
+            <Image src={process.env.PUBLIC_URL + props.imagePath} />
             <Link to={'products#'+ props.category} className="card-button">Перейти</Link>
         </div>
     )

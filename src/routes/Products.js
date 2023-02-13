@@ -1,8 +1,10 @@
 import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
+import '../css/placeholder.css'
 import basket from "../basket"
 import tg from '../telegram'
 import '../css/products.css'
+import Image from "./Image"
 import menu from '../menu'
 
 const Products = () => {
@@ -58,7 +60,7 @@ const ProductCard = (props) => {
     return (
     <div className="card" key={props.key}>
             <span className="card-label">{props.name}</span>
-            <img className="card-image" src={process.env.PUBLIC_URL + props.imagePath} alt="Here should be an image"></img>
+            <Image src={process.env.PUBLIC_URL + props.imagePath} />
             <span className="card-price">{price}</span>
             <CardFooter name={props.name} product={props} state={props.state} />
     </div>
