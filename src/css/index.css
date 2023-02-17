@@ -59,10 +59,8 @@ body::-webkit-scrollbar{
   max-width: 100%;
   height: auto;
   float: left;
-  border-radius: 20%;
+  border-radius: 12%;
   width: 150px;
-  height: 150px;
-  object-fit: cover;
   transition: 100ms;
 }
 
