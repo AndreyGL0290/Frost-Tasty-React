@@ -26,16 +26,17 @@ const Products = () => {
 
     let data = []
     
-    for (let i = 0; i < Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]]).length; i++){
-        if (typeof menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]] === 'object') {
-            if (basket.getProduct(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].name)) {
-                menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].state = {products: products, setProducts: setProducts}
-                data.push(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]])
+    let category = location.hash.replace('#', '')
+    for (let i = 0; i < Object.keys(menu[category]).length; i++){
+        if (typeof menu[category][Object.keys(menu[category])[i]] === 'object') {
+            if (basket.getProduct(menu[category][Object.keys(menu[category])[i]].name)) {
+                menu[category][Object.keys(menu[category])[i]].state = {products: products, setProducts: setProducts}
+                data.push(menu[category][Object.keys(menu[category])[i]])
                 continue
             }
-            menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].parent = location.hash.split('#')[location.hash.split('#').length-1]
-            menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]].state = {products: products, setProducts: setProducts}
-            data.push(menu[location.hash.split('#')[location.hash.split('#').length-1]][Object.keys(menu[location.hash.split('#')[location.hash.split('#').length-1]])[i]])
+            menu[category][Object.keys(menu[category])[i]].parent = category
+            menu[category][Object.keys(menu[category])[i]].state = {products: products, setProducts: setProducts}
+            data.push(menu[category][Object.keys(menu[category])[i]])
         }
     }
 
