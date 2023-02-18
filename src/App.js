@@ -10,8 +10,9 @@ function App() {
   return (
     <>
       <div id="image-loader" onClick={event => {
-        event.target.style.display= 'none'
+        event.target.style.display = 'none'
         document.getElementsByTagName('body')[0].style.overflow = 'auto'
+        event.target.style.backgroundImage = 'none'
         }}></div>
       <div className="middle-container">
         <Routes>
