@@ -18,7 +18,6 @@ const Image = props => {
             style={!load ? { display: 'none' } : {}}
             onLoad={() => setLoad(true)}
             onClick={(event) => {
-              console.log('click')
               document.getElementById('image-loader').style.display = 'block' 
               document.getElementById('image-loader').style.backgroundImage = 'url(' + event.target.src + ')'
               document.getElementsByTagName('body')[0].style.overflow = 'hidden'
