@@ -8,6 +8,11 @@ import './css/App.css'
 
 function App() {
   return (
+    <>
+      <div id="image-loader" onClick={event => {
+        event.target.style.display= 'none'
+        document.getElementsByTagName('body')[0].style.overflow = 'auto'
+        }}></div>
       <div className="middle-container">
         <Routes>
           <Route index element={<Home groups={menu}/>} />
@@ -17,6 +22,7 @@ function App() {
           <Route path='*' element={<NoMatch/>}/>
         </Routes>
       </div>
+    </>
   );
 }
 
