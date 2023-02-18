@@ -1,7 +1,12 @@
 import { useState } from "react"
+import { useLocation } from "react-router-dom"
+import closeImage from "../closeImageFunc"
+import homePageReroute from "../RerouteFunc"
+import tg from "../telegram"
 
 const Image = props => {
     let [load, setLoad] = useState(false)
+    const location = useLocation()
 
     return (
         <>
@@ -18,12 +23,11 @@ const Image = props => {
             style={!load ? { display: 'none' } : {}}
             onLoad={() => setLoad(true)}
             onClick={(event) => {
-              document.addEventListener('hashchange', (event) => {
-                event.preventDefault()
-                document.getElementById('image-loader').style.display = 'none'
-                document.getElementById('image-loader').style.backgroundImage = 'none'
-                document.getElementsByTagName('body')[0].style.overflow = 'auto'
-              })
+              tg.BackButton.offClick(homePageReroute)
+              tg.BackButton.onClick(closeImage)
+
+              if (location.pathname == '/') tg.BackButton.show()
+
               document.getElementById('image-loader').style.display = 'block' 
               document.getElementById('image-loader').style.backgroundImage = 'url(' + event.target.src + ')'
               document.getElementsByTagName('body')[0].style.overflow = 'hidden'

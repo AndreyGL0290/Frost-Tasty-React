@@ -1,4 +1,5 @@
 import basket from './basket'
+import homePageReroute from './RerouteFunc'
 
 let tg = window.Telegram.WebApp
 
@@ -20,8 +21,6 @@ tg.MainButton.onClick(() => {
     tg.sendData(JSON.stringify(data))
 })
 
-tg.BackButton.onClick(() => {
-    window.location.href = "https://andreygl0290.github.io/Frost-Tasty-React/#/"
-})
+tg.BackButton.onClick(homePageReroute)
 
 export default tg
