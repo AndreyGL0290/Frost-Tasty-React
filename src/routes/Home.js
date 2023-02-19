@@ -10,7 +10,7 @@ const Home = props => {
 
     let basketButton = <></>
     if (Object.keys(basket.products).length == 0) basketButton = <></>
-    else basketButton = <div className="basket-button-container"><Link to="../basket" className="basket-button">Перейти в корзину</Link></div>
+    else basketButton = <div className="basket-button-container"><Link to="../basket" className="basket-button" onClick={() => {window.scrollTo(0,0)}}>Перейти в корзину</Link></div>
 
     let data = []
     for (let i = 0; i < Object.keys(props.groups).length; i++){
@@ -40,7 +40,7 @@ const GroupCard = props => {
             <span className="card-label">{props.name}</span>
 
             <Image src={process.env.PUBLIC_URL + props.imagePath} />
-            <Link to={'products#'+ props.category} className="card-button">Перейти</Link>
+            <Link to={'products#'+ props.category} className="card-button" onClick={() => {window.scrollTo(0,0)}}>Перейти</Link>
         </div>
     )
 }

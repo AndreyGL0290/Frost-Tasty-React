@@ -18,7 +18,7 @@ const Products = () => {
     useEffect(() => {
         setButton(
         <div className="basket-button-container">
-            <Link to="../basket" className="basket-button">Перейти в корзину</Link>
+            <Link to="../basket" className="basket-button" onClick={() => {window.scrollTo(0,0)}}>Перейти в корзину</Link>
         </div>
         )
         if (Object.keys(basket.products).length == 0) setButton(<></>)
