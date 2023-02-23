@@ -39,6 +39,7 @@ const BasketCard = (props) => {
                     <svg className="system-image" viewBox="0 0 100 100"
                     onClick={() => {
                         basket.deleteProduct(props.product.name)
+                        if (Object.keys(basket.products).length == 0) tg.MainButton.hide()
                         props.state.setDelete(!props.state.x)
                     }}>
                         <line x1="0" y1="0" x2="100" y2="100" stroke="black" stroke-width="10"/>
