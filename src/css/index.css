@@ -9,18 +9,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
 
-#root{
+#root {
   display: flex;
   justify-content: center;
   height: 100vh;
   width: 100%;
 }
 
-.middle-container{
+.middle-container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -29,33 +29,75 @@ body::-webkit-scrollbar{
   justify-content: space-between;
 }
 
-.inner-container{
+.inner-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   max-width: 360px;
   gap: 100px 60px;
 }
 
-.interface-container{
+.interface-container {
   height: 100%;
 }
 
-.card{
+.cards {
+  grid-template-rows: auto auto auto;
+  display: grid;
+}
+
+.card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  justify-items: center;
   align-items: center;
 }
 
-.card-label{
+.label-container {
+  display: grid;
+  grid-template-columns:  150px 150px;
+  justify-items: center;
+  column-gap: 60px;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  justify-items: center;
+  align-items: center;
+  column-gap: 60px;
+}
+
+.price-container {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  justify-items: center;
+  align-items: center;
+  column-gap: 60px;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  justify-items: center;
+  column-gap: 60px;
+}
+
+.card-label {
   flex: 1;
   max-width: 150px;
-  margin-bottom: 10%;
+  /* margin-bottom: 10%; */
   text-align: center;
   display: flex;
   align-items: center;
 }
 
-.card-image{
+.grid-maker {
+  display: grid;
+  grid-template-areas: "";
+}
+
+.card-image {
   max-width: 100%;
   height: auto;
   float: left;
@@ -64,7 +106,7 @@ body::-webkit-scrollbar{
   transition: 100ms;
 }
 
-.card-button{
+.card-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,22 +122,26 @@ body::-webkit-scrollbar{
   color: black;
   background-color: #FFBF00;
 
+  font-family: 'montserrat';
+  font-weight: 500;
+  border: 0;
+
   cursor: pointer;
   text-decoration: none;
 }
 
-.card-price{
+.card-price {
   margin-top: 10px;
 }
 
-.basket-button-container{
+.basket-button-container {
   width: 100%;
   margin-top: 10%;
   position: sticky;
   bottom: 0;   
 }
 
-.basket-button{
+.basket-button {
   display: flex;
   justify-content: center;
   align-items: center;
