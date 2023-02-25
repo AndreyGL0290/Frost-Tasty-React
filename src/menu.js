@@ -29,7 +29,7 @@ const menu = {
 
         Content4:
         {
-            name: "Пельмени Острые с зеленью",
+            name: "Пельмени с перцом чили & зеленью",
             imagePath: "/images/products/resized/Пельмени.png",
             price: 23
         }
@@ -57,28 +57,20 @@ const menu = {
 
         Content3:
         {
-            name: "Вареники Мясо & Капуста",
-            imagePath: "/images/products/resized/Вареники.png",
-            info: "Состав:\nТесто,Фарш свино-говяжий,Капуста белокачанная,Лук,Соль,Специи",
-            price: 18
-        },
-
-        Content4:
-        {
             name: "Вареники Капуста & Шпик",
             imagePath: "/images/products/resized/Вареники.png",
             info: "Состав:\nТесто,Капуста квашеная,Шпик свинной,Лук,Соль,Специи",
             price: 15
         },
 
-        Content5:
+        Content4:
         {
             name: "Вареники Сыр имеретинский",
             imagePath: "/images/products/resized/Вареники.png",
             info: "Состав:\nТесто,Сыр имеретинский,Яйцо,Соль,Специи",
             price: 18
         },
-        Content6:
+        Content5:
         {
             name: "Вареники с творогом",
             imagePath: "/images/products/resized/Вареники.png",
@@ -90,11 +82,11 @@ const menu = {
     Category3:
     {
         name: "Котлеты & Фрикадельки",
-        imagePath: "/images/products/resized/Котлеты, фрикадельки.jpg",
+        imagePath: "/images/products/resized/Котлеты.jpg",
         Content1:
         {
             name: "Котлеты Куриные",
-            imagePath: "/images/products/resized/Котлеты, фрикадельки.jpg",
+            imagePath: "/images/products/resized/Котлеты.jpg",
             info: "Состав:\nФиле курицы,Лук,Соль,Перец,Мука,Яйцо куриное,Сухари панировочные из багета",
             price: 25
         },
@@ -102,7 +94,7 @@ const menu = {
         Content2:
         {
             name: "Котлеты Домашние",
-            imagePath: "/images/products/resized/Котлеты, фрикадельки.jpg",
+            imagePath: "/images/products/resized/Котлеты.jpg",
             info: "Состав:\nСвинина,Говядина,Хлеб белый,Соль специи,Мука для панировки",
             price: 25
         },
@@ -110,7 +102,7 @@ const menu = {
         Content3:
         {
             name: "Фрикадельки Куриные",
-            imagePath: "/images/products/resized/Котлеты, фрикадельки.jpg",
+            imagePath: "/images/products/resized/Фрикадельки.jpg",
             info: "Состав:\nМясо курицы,Лук,Зелень,Соль,Специи",
             price: 25
         },
@@ -118,7 +110,7 @@ const menu = {
         Content4:
         {
             name: "Фрикадельки Свинина & Говядины",
-            imagePath: "/images/products/resized/Котлеты, фрикадельки.jpg",
+            imagePath: "/images/products/resized/Фрикадельки.jpg",
             info: "Состав:\nСвинина,Говядина,Лук,Зелень,Соль,Специи",
             price: 25
         },
@@ -154,7 +146,7 @@ const menu = {
 
         Content3:
         {
-            name: "Творожные сырники",
+            name: "Сырники творожные",
             imagePath: "/images/products/resized/Сырники.jpg",
             info: "Состав:\nТворог из коровьего молока,Яйцо,Соль,Сахар,Сахар ванильный,Мука",
             price: 16
@@ -163,7 +155,7 @@ const menu = {
 
     Category5:
     {
-        name: "Салаты & Закузки",
+        name: "Салаты",
         imagePath: "/images/products/resized/Салаты и закуски.jpg",
         Content1:
         {
@@ -195,30 +187,6 @@ const menu = {
             imagePath: "/images/products/resized/Салат с крабовыми палочками.png",
             info: "Состав:\nКрабовые палочки,Яйцо,Кукуруза консервированая",
             price: 30
-        },
-
-        Content5: 
-        {
-            name: "Рулет с сайрой",
-            imagePath: "/images/products/resized/Рулет сайра_тунец.jpg",
-            info: "Состав:\nЛаваш,Сайра консервированная,Яйцо,Сыр твердый,Майонез,Лук зеленый",
-            price: 40
-        },
-
-        Content6:
-        {
-            name: "Рулет с тунцом",
-            imagePath: "/images/products/resized/Рулет сайра_тунец.jpg",
-            info: "Состав:\nЛаваш,Тунец консервированный,Яйцо,Сыр твердый,Майонез,Лук зеленый",
-            price: 40
-        },
-
-        Content7:
-        {
-            name: "Рулет с твердым сыром и чесноком",
-            imagePath: "/images/products/resized/Рулет с чесноком.jpg",
-            info: "Состав:\nЛаваш,Сыр твердый,Яйцо,Чеснок,Лук зеленый,Майонез",
-            price: 40
         }
     },
 
