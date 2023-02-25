@@ -6,7 +6,7 @@ class Basket{
 
     setQuantity(name, quantity){
         this.products[name].quantity += quantity
-        if (this.products[name].quantity == 0) this.deleteProduct(name)
+        if (this.products[name].quantity === 0) this.deleteProduct(name)
     }
 
     addProduct(name, product){
