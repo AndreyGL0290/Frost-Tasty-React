@@ -17,22 +17,23 @@ const Image = props => {
                 </div>
             </div>
           ) : null}
-          <img
-            src={props.src}
-            className="card-image"
-            style={!load ? { display: 'none' } : {}}
-            onLoad={() => setLoad(true)}
-            onClick={(event) => {
-              tg.BackButton.offClick(homePageReroute)
-              tg.BackButton.onClick(closeImage)
+            <img
+              src={props.src}
+              alt="Здесь должно быть изображение"
+              className="card-image"
+              style={!load ? { display: 'none' } : {}}
+              onLoad={() => setLoad(true)}
+              onClick={(event) => {
+                tg.BackButton.offClick(homePageReroute)
+                tg.BackButton.onClick(closeImage)
 
-              if (location.pathname == '/') tg.BackButton.show()
+                if (location.pathname === '/') tg.BackButton.show()
 
-              document.getElementById('image-loader').style.display = 'block' 
-              document.getElementById('image-loader').style.backgroundImage = 'url(' + event.target.src + ')'
-              document.getElementsByTagName('body')[0].style.overflow = 'hidden'
-            }}
-          />
+                document.getElementById('image-loader').style.display = 'block' 
+                document.getElementById('image-loader').style.backgroundImage = 'url(' + event.target.src + ')'
+                document.getElementsByTagName('body')[0].style.overflow = 'hidden'
+              }}
+            />
         </>
     )
 }
