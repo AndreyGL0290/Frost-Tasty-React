@@ -12,13 +12,15 @@ const Basket = () => {
 
     let [x, setDelete] = useState(false)
 
-    if (Object.keys(basket.products).length == 0)
-    return (
-        <div className="after-label-container">
-            <span>Ваша корзина пуста<br/>Посмтрите что-нибудь еще<br/><br/></span>
-            <Link className="get-more-button" to={'../'}>Посмотреть</Link>
-        </div>
-    )
+    if (Object.keys(basket.products).length === 0){
+        tg.MainButton.hide()
+        return (
+            <div className="after-label-container">
+                <span>Ваша корзина пуста<br/>Посмтрите что-нибудь еще<br/><br/></span>
+                <Link className="get-more-button" to={'../'}>Посмотреть</Link>
+            </div>
+        )
+    }
 
     return (
         <div className='basket-container'>
@@ -39,7 +41,6 @@ const BasketCard = (props) => {
                     <svg className="system-image" viewBox="0 0 100 100"
                     onClick={() => {
                         basket.deleteProduct(props.product.name)
-                        if (Object.keys(basket.products).length == 0) tg.MainButton.hide()
                         props.state.setDelete(!props.state.x)
                     }}>
                         <line x1="0" y1="0" x2="100" y2="100" stroke="black" stroke-width="10"/>
