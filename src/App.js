@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <div id="image-loader" onClick={event => {
-        if (location.pathname == '/') tg.BackButton.hide()
+        if (location.pathname === '/') tg.BackButton.hide()
         tg.BackButton.offClick(closeImage)
         tg.BackButton.onClick(homePageReroute)
 
