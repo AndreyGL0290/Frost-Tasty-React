@@ -118,7 +118,7 @@ const menu = {
         Content5:
         {
             name: "Шницель куриный панированный в багете",
-            imagePath: "/images/products/resized/Шницель.jpg",
+            imagePath: "/images/products/resized/Шницель.png",
             info: "Состав:\nФиле курицы,Яйцо,Соль,Специи,Мука,Сухари панировочные из багета",
             price: 25
         }
