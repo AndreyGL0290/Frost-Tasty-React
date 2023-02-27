@@ -86,7 +86,7 @@ const menu = {
         Content1:
         {
             name: "Котлеты Куриные",
-            imagePath: "/images/products/resized/Котлеты.jpg",
+            imagePath: "/images/products/resized/Котлеты куриные.png",
             info: "Состав:\nФиле курицы,Лук,Соль,Перец,Мука,Яйцо куриное,Сухари панировочные из багета",
             price: 25
         },
@@ -94,7 +94,7 @@ const menu = {
         Content2:
         {
             name: "Котлеты Домашние",
-            imagePath: "/images/products/resized/Котлеты.jpg",
+            imagePath: "/images/products/resized/Котлеты домашние.png",
             info: "Состав:\nСвинина,Говядина,Хлеб белый,Соль специи,Мука для панировки",
             price: 25
         },
@@ -102,7 +102,7 @@ const menu = {
         Content3:
         {
             name: "Фрикадельки Куриные",
-            imagePath: "/images/products/resized/Фрикадельки.jpg",
+            imagePath: "/images/products/resized/Фрикадельки куриные.png",
             info: "Состав:\nМясо курицы,Лук,Зелень,Соль,Специи",
             price: 25
         },
@@ -110,7 +110,7 @@ const menu = {
         Content4:
         {
             name: "Фрикадельки Свинина & Говядины",
-            imagePath: "/images/products/resized/Фрикадельки.jpg",
+            imagePath: "/images/products/resized/Фрикадельки свинина говядина.png",
             info: "Состав:\nСвинина,Говядина,Лук,Зелень,Соль,Специи",
             price: 25
         },
