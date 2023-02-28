@@ -11,7 +11,7 @@ class Basket{
 
     addProduct(name, product){
         this.products[name] = product
-        this.products[name].quantity = 1
+        this.products[name].quantity = 0.5
     }
 
     getProduct(name){

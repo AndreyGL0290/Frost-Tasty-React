@@ -107,7 +107,7 @@ const CardFooter = (props) => {
     if (quantity === 0){
         return (
             <button className="card-button" onClick={() => {
-                setQuantity(quantity + 1)
+                setQuantity(quantity + 0.5)
                 basket.addProduct(props.product.name, {name: props.product.name, parent: props.product.parent, price: props.product.price})
                 window.sessionStorage.setItem('products', JSON.stringify(basket.products))
 
@@ -120,8 +120,8 @@ const CardFooter = (props) => {
             <div className="product-menu-container">
                 <svg className="system-image" viewBox="0 0 100 100"
                 onClick={() => {
-                    setQuantity(quantity - 1)
-                    basket.setQuantity(props.product.name, -1)
+                    setQuantity(quantity - 0.5)
+                    basket.setQuantity(props.product.name, -0.5)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                     
                     if (Object.keys(basket.products).length === 0) props.state.setProducts([])
@@ -129,12 +129,12 @@ const CardFooter = (props) => {
                     <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="10"/>
                 </svg>
 
-                <span className="quantity-label" onDoubleClick={e => {e.preventDefault()}}>{quantity}</span>
+                <span className="quantity-label" onDoubleClick={e => {e.preventDefault()}}>{quantity} кг</span>
 
                 <svg className="system-image" viewBox="0 0 100 100"
                 onClick={() => {
-                    setQuantity(quantity + 1)
-                    basket.setQuantity(props.product.name, 1)
+                    setQuantity(quantity + 0.5)
+                    basket.setQuantity(props.product.name, 0.5)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                 }}>
                     <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="10"/>
