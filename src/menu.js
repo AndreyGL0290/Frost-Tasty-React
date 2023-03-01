@@ -86,7 +86,7 @@ const menu = {
         Content1:
         {
             name: "Котлеты Куриные",
-            imagePath: "/images/products/resized/Котлеты куриные.png",
+            imagePath: "/images/products/resized/Котлеты куриные.jpg",
             info: "Состав:\nФиле курицы,Лук,Соль,Перец,Мука,Яйцо куриное,Сухари панировочные из багета",
             price: 25
         },
@@ -94,7 +94,7 @@ const menu = {
         Content2:
         {
             name: "Котлеты Домашние",
-            imagePath: "/images/products/resized/Котлеты домашние.png",
+            imagePath: "/images/products/resized/Котлеты домашние.jpg",
             info: "Состав:\nСвинина,Говядина,Хлеб белый,Соль специи,Мука для панировки",
             price: 25
         },
@@ -102,7 +102,7 @@ const menu = {
         Content3:
         {
             name: "Фрикадельки Куриные",
-            imagePath: "/images/products/resized/Фрикадельки куриные.png",
+            imagePath: "/images/products/resized/Фрикадельки куриные.jpg",
             info: "Состав:\nМясо курицы,Лук,Зелень,Соль,Специи",
             price: 25
         },
@@ -110,7 +110,7 @@ const menu = {
         Content4:
         {
             name: "Фрикадельки Свинина & Говядины",
-            imagePath: "/images/products/resized/Фрикадельки свинина говядина.png",
+            imagePath: "/images/products/resized/Фрикадельки свинина говядина.jpg",
             info: "Состав:\nСвинина,Говядина,Лук,Зелень,Соль,Специи",
             price: 25
         },
@@ -118,7 +118,7 @@ const menu = {
         Content5:
         {
             name: "Шницель куриный панированный в багете",
-            imagePath: "/images/products/resized/Шницель.png",
+            imagePath: "/images/products/resized/Шницель.jpg",
             info: "Состав:\nФиле курицы,Яйцо,Соль,Специи,Мука,Сухари панировочные из багета",
             price: 25
         }
