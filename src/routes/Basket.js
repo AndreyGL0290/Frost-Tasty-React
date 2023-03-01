@@ -58,7 +58,7 @@ const BasketCard = (props) => {
             </div>
             <div className='add-content-container'>
                 <span className='product-quantity'>{props.product.quantity}</span>
-                <span className='product-price'>{props.product.price*props.product.quantity} ₾</span>
+                <span className='product-price'>{Math.ceil(props.product.price*props.product.quantity)} ₾</span>
             </div>
         </div>
     )
