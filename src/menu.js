@@ -142,7 +142,7 @@ const menu = {
             name: "Блины фаршированные творогом",
             imagePath: "/images/products/resized/Блины с творогом.jpg",
             info: "Состав:\nБлины,Творог из коровьего молока,Сахар ванильный,Сахар,Соль",
-            price: 2,
+            price: 1.8,
             postfix: '₾/шт'
         },
 
