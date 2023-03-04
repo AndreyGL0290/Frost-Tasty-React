@@ -114,7 +114,7 @@ const CardFooter = (props) => {
             <button className="card-button" onClick={() => {
                 setQuantity(quantity + x)
                 
-                basket.addProduct(props.product.name, {name: props.product.name, parent: props.product.parent, price: props.product.price}, x)
+                basket.addProduct(props.product.name, {name: props.product.name, parent: props.product.parent, price: props.product.price, postfix: props.product.postfix}, x)
                 window.sessionStorage.setItem('products', JSON.stringify(basket.products))
 
                 if (Object.keys(basket.products).length <= 1) props.state.setProducts(Object.keys(basket.products))                
@@ -122,7 +122,6 @@ const CardFooter = (props) => {
         )
     }
     else {
-        console.log(props.product)
         let quantityPostfix = props.product.postfix || 'кг'
         return (
             <div className="product-menu-container">
