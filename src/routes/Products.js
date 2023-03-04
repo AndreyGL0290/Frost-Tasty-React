@@ -60,7 +60,6 @@ const Products = () => {
 
 const ProductCard = (props) => {
     props = props.product
-    let pricePostfix = props[0].postfix || '₾/кг'
     if (props.length === 2) return (
         <div className="cards">
             <div className="label-container">
@@ -72,8 +71,8 @@ const ProductCard = (props) => {
                 <Image src={process.env.PUBLIC_URL + props[1].imagePath} />
             </div>
             <div className="price-container">
-                <span className="card-price">{props[0].price + ' ' + pricePostfix}</span>
-                <span className="card-price">{props[1].price + ' ' + pricePostfix}</span>
+                <span className="card-price">{props[0].price + ' ' + (props[0].postfix || '₾/кг')}</span>
+                <span className="card-price">{props[1].price + ' ' + (props[1].postfix || '₾/кг')}</span>
             </div>
             <div className="button-container">
                 <CardFooter product={props[0]} state={props[0].state} />
@@ -90,7 +89,7 @@ const ProductCard = (props) => {
                 <Image src={process.env.PUBLIC_URL + props[0].imagePath} />
             </div>
             <div className="price-container">
-                <span className="card-price">{props[0].price + ' ' + pricePostfix}</span>
+                <span className="card-price">{props[0].price + ' ' + (props[0].postfix || '₾/кг')}</span>
             </div>
             <div className="button-container">
                 <CardFooter product={props[0]} state={props[0].state} />

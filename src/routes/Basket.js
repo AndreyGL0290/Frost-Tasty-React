@@ -37,7 +37,6 @@ const BasketCard = (props) => {
     let price = props.product.price * props.product.quantity
     if (!props.product.postfix) price = Math.ceil(price)
 
-    let quantityPostfix = props.product.postfix || 'кг'
     return (
         <div className='product-container'>
             <div className='content-container'>
@@ -61,7 +60,7 @@ const BasketCard = (props) => {
                 <span className='product-label'>{props.product.name}</span>
             </div>
             <div className='add-content-container'>
-                <span className='product-quantity'>{props.product.quantity} {quantityPostfix.replace('₾/', '')}</span>
+                <span className='product-quantity'>{props.product.quantity} {(props.product.postfix || 'кг').replace('₾/', '')}</span>
                 <span className='product-price'>{price} ₾</span>
             </div>
         </div>
