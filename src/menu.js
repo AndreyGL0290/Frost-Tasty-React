@@ -133,7 +133,7 @@ const menu = {
             name: "Блины фаршированные мясом",
             imagePath: "/images/products/resized/Блины фаршированные.jpg",
             info: "Состав:\nБлины,Свинина,Говядина,Лук,Масло растительное,Соль,Специи",
-            price: 2.2,
+            price: 2.2.toFixed(2),
             postfix: '₾/шт'
         },
         
@@ -142,7 +142,7 @@ const menu = {
             name: "Блины фаршированные творогом",
             imagePath: "/images/products/resized/Блины с творогом.jpg",
             info: "Состав:\nБлины,Творог из коровьего молока,Сахар ванильный,Сахар,Соль",
-            price: 1.8,
+            price: 1.8.toFixed(2),
             postfix: '₾/шт'
         },
 
