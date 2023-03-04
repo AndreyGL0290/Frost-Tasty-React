@@ -31,7 +31,7 @@ const menu = {
         {
             name: "Пельмени с перцем чили & зеленью",
             imagePath: "/images/products/resized/Пельмени.png",
-            price: 23
+            price: 24
         }
     },
 
