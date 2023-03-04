@@ -8,7 +8,7 @@ const menu = {
             name: "Пельмени Свинина & Говядина",
             imagePath: "/images/products/resized/Пельмени.png",
             info: "Состав:\nСвинина,Говядина,Лук,Вода,Соль,Специи",
-            price: 18
+            price: 19
         },
 
         Content2:
@@ -16,7 +16,7 @@ const menu = {
             name: "Пельмени Говядина",
             imagePath: "/images/products/resized/Пельмени.png",
             info: "Состав:\nТесто пельменное,Говядина,Лук,Вода,Соль,Специи",
-            price: 23
+            price: 24
         },
         
         Content3:
@@ -29,7 +29,7 @@ const menu = {
 
         Content4:
         {
-            name: "Пельмени с перцом чили & зеленью",
+            name: "Пельмени с перцем чили & зеленью",
             imagePath: "/images/products/resized/Пельмени.png",
             price: 23
         }
@@ -43,8 +43,8 @@ const menu = {
         {
             name: "Вареники Картофель",
             imagePath: "/images/products/resized/Вареники.png",
-            info: "Состав:\nТесто для вареников,Картофель,Масло из коровьев сливок,Яйцо,Соль",
-            price: 11
+            info: "Состав:\nТесто для вареников,Картофель,Масло из коровьих сливок,Яйцо,Соль",
+            price: 13
         },
 
         Content2:
@@ -60,7 +60,7 @@ const menu = {
             name: "Вареники Капуста & Шпик",
             imagePath: "/images/products/resized/Вареники.png",
             info: "Состав:\nТесто,Капуста квашеная,Шпик свинной,Лук,Соль,Специи",
-            price: 15
+            price: 18
         },
 
         Content4:
@@ -68,14 +68,14 @@ const menu = {
             name: "Вареники Сыр имеретинский",
             imagePath: "/images/products/resized/Вареники.png",
             info: "Состав:\nТесто,Сыр имеретинский,Яйцо,Соль,Специи",
-            price: 18
+            price: 19
         },
         Content5:
         {
             name: "Вареники с творогом",
             imagePath: "/images/products/resized/Вареники.png",
             info: "Состав:\nТесто,Сыр имеретинский,Яйцо,Соль,Специи",
-            price: 16
+            price: 18
         }
     },
 
@@ -133,7 +133,8 @@ const menu = {
             name: "Блины фаршированные мясом",
             imagePath: "/images/products/resized/Блины фаршированные.jpg",
             info: "Состав:\nБлины,Свинина,Говядина,Лук,Масло растительное,Соль,Специи",
-            price: 25
+            price: 2.2,
+            postfix: '₾/шт'
         },
         
         Content2:
@@ -141,7 +142,8 @@ const menu = {
             name: "Блины фаршированные творогом",
             imagePath: "/images/products/resized/Блины с творогом.jpg",
             info: "Состав:\nБлины,Творог из коровьего молока,Сахар ванильный,Сахар,Соль",
-            price: 18
+            price: 2,
+            postfix: '₾/шт'
         },
 
         Content3:
@@ -149,7 +151,8 @@ const menu = {
             name: "Сырники творожные",
             imagePath: "/images/products/resized/Сырники.jpg",
             info: "Состав:\nТворог из коровьего молока,Яйцо,Соль,Сахар,Сахар ванильный,Мука",
-            price: 16
+            price: 2,
+            postfix: '₾/шт'
         }
     },
 
@@ -200,7 +203,7 @@ const menu = {
             imagePath: "/images/products/resized/Сет№1.png",
             info: "Состав:\nПельмени Свинина & Говядина, 300г,Пельмени Говядина, 300г,Вареники Картофель, 300г,Вареники Мясо & Капуста, 300г,Котлеты Домашние, 4 шт.,Шницель куриный панированный в багете, 2 шт.,Блины фаршированные творогом, 4 шт.",
             price: 49,
-            postfix: '₾'
+            postfix: '₾/шт'
         },
         
         Content2:
@@ -209,7 +212,7 @@ const menu = {
             imagePath: "/images/products/resized/Сет№2.png",
             info: "Состав:\nПельмени Свинина & Говядина, 300г,Пельмени Курица, 300г,Вареники Картофель & Грибы, 300г,Вареники Сыр имеретинский, 300г,Котлеты Куриные, 4 шт.,Блины фаршированны мясом, 4 шт.,Сырники, 4 шт.",
             price: 49,
-            postfix: '₾'
+            postfix: '₾/шт'
         }
     }
 }

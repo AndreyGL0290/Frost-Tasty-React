@@ -60,6 +60,7 @@ const Products = () => {
 
 const ProductCard = (props) => {
     props = props.product
+    let pricePostfix = props[0].postfix || '₾/кг'
     if (props.length === 2) return (
         <div className="cards">
             <div className="label-container">
@@ -71,8 +72,8 @@ const ProductCard = (props) => {
                 <Image src={process.env.PUBLIC_URL + props[1].imagePath} />
             </div>
             <div className="price-container">
-                <span className="card-price">{props[0].price + props[0].postfix || props[0].price + ' ₾/кг'}</span>
-                <span className="card-price">{props[1].price + props[1].postfix || props[1].price + ' ₾/кг'}</span>
+                <span className="card-price">{props[0].price + ' ' + pricePostfix}</span>
+                <span className="card-price">{props[1].price + ' ' + pricePostfix}</span>
             </div>
             <div className="button-container">
                 <CardFooter product={props[0]} state={props[0].state} />
@@ -89,7 +90,7 @@ const ProductCard = (props) => {
                 <Image src={process.env.PUBLIC_URL + props[0].imagePath} />
             </div>
             <div className="price-container">
-                <span className="card-price">{props[0].price + props[0].postfix || props[0].price + ' ₾/кг'}</span>
+                <span className="card-price">{props[0].price + ' ' + pricePostfix}</span>
             </div>
             <div className="button-container">
                 <CardFooter product={props[0]} state={props[0].state} />
@@ -104,11 +105,16 @@ const CardFooter = (props) => {
     else startValue = 0
     const [quantity, setQuantity] = useState(startValue)
 
+    let x = 0.5
+    if (props.product.postfix) x = 1
+
     if (quantity === 0){
+        console.log(props.product)
         return (
             <button className="card-button" onClick={() => {
-                setQuantity(quantity + 0.5)
-                basket.addProduct(props.product.name, {name: props.product.name, parent: props.product.parent, price: props.product.price})
+                setQuantity(quantity + x)
+                
+                basket.addProduct(props.product.name, {name: props.product.name, parent: props.product.parent, price: props.product.price}, x)
                 window.sessionStorage.setItem('products', JSON.stringify(basket.products))
 
                 if (Object.keys(basket.products).length <= 1) props.state.setProducts(Object.keys(basket.products))                
@@ -116,12 +122,14 @@ const CardFooter = (props) => {
         )
     }
     else {
+        console.log(props.product)
+        let quantityPostfix = props.product.postfix || 'кг'
         return (
             <div className="product-menu-container">
                 <svg className="system-image" viewBox="0 0 100 100"
                 onClick={() => {
-                    setQuantity(quantity - 0.5)
-                    basket.setQuantity(props.product.name, -0.5)
+                    setQuantity(quantity - x)
+                    basket.setQuantity(props.product.name, -x)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                     
                     if (Object.keys(basket.products).length === 0) props.state.setProducts([])
@@ -129,12 +137,12 @@ const CardFooter = (props) => {
                     <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="10"/>
                 </svg>
 
-                <span className="quantity-label" onDoubleClick={e => {e.preventDefault()}}>{quantity} кг</span>
+                <span className="quantity-label" onDoubleClick={e => {e.preventDefault()}}>{quantity} {quantityPostfix.replace('₾/', '')}</span>
 
                 <svg className="system-image" viewBox="0 0 100 100"
                 onClick={() => {
-                    setQuantity(quantity + 0.5)
-                    basket.setQuantity(props.product.name, 0.5)
+                    setQuantity(quantity + x)
+                    basket.setQuantity(props.product.name, x)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                 }}>
                     <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="10"/>

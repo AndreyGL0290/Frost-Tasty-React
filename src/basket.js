@@ -9,9 +9,9 @@ class Basket{
         if (this.products[name].quantity === 0) this.deleteProduct(name)
     }
 
-    addProduct(name, product){
+    addProduct(name, product, quantity){
         this.products[name] = product
-        this.products[name].quantity = 0.5
+        this.products[name].quantity = quantity
     }
 
     getProduct(name){
