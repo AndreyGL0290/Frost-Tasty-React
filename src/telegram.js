@@ -15,7 +15,7 @@ tg.MainButton.onClick(() => {
 
     // Shortens basket product data so only valuable information is send
     for (let i = 0; i < Object.keys(basket.products).length; i += 1){
-        data[Object.keys(basket.products)[i]] = {'price': basket.products[Object.keys(basket.products)[i]].price, 'quantity': basket.products[Object.keys(basket.products)[i]].quantity}
+        data[Object.keys(basket.products)[i]] = {'price': basket.products[Object.keys(basket.products)[i]].price, 'quantity': basket.products[Object.keys(basket.products)[i]].quantity, 'postfix': (basket.products[Object.keys(basket.products)[i]].postfix || '₾/кг')}
     }
 
     tg.sendData(JSON.stringify(data))
