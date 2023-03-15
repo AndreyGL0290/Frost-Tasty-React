@@ -52,7 +52,7 @@ const menu = {
             name: "Вареники Картофель & Грибы",
             imagePath: "/images/products/resized/Вареники.png",
             info: "Состав:\nТесто,Картофель,Шампиньоны,Лук,Масло подсолнечное,Соль,Специи",
-            price: 15
+            price: 16
         },
 
         Content3:
