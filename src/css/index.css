@@ -29,13 +29,23 @@ body::-webkit-scrollbar {
   justify-content: space-between;
 }
 
-.inner-container {
-  display: grid;
-  grid-template-columns: auto;
-  width: 95%;
-  gap: 7em;
+@media only screen and (max-width: 380px){
+  .inner-container {
+    display: grid;
+    grid-template-columns: auto;
+    width: 95%;
+    gap: 7em;
+  }
 }
 
+@media only screen and (min-width: 380px){
+  .inner-container {
+    display: grid;
+    grid-template-columns: auto;
+    width: 360px;
+    gap: 7em;
+  }
+}
 .interface-container {
   height: 100%;
 }
