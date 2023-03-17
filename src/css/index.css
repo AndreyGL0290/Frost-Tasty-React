@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'montserrat';
-  font-weight: 700;
+  font-family: Verdana, sans-serif;
+  font-weight: 500;
   background-color: white;
   color: black;
   -webkit-font-smoothing: antialiased;
@@ -16,8 +16,8 @@ body::-webkit-scrollbar {
 #root {
   display: flex;
   justify-content: center;
-  height: 100vh;
-  width: 100%;
+  width:100%;
+  height:100%;
 }
 
 .middle-container {
@@ -32,8 +32,8 @@ body::-webkit-scrollbar {
 .inner-container {
   display: grid;
   grid-template-columns: auto;
-  max-width: 400px;
-  gap: 100px 60px;
+  width: 95%;
+  gap: 7em;
 }
 
 .interface-container {
@@ -55,54 +55,45 @@ body::-webkit-scrollbar {
 
 .label-container {
   display: grid;
-  grid-template-columns:  170px 170px;
+  grid-template-columns:  40% 40%;
+  column-gap: 20%;
   justify-items: center;
-  column-gap: 60px;
 }
 
 .image-container {
   display: grid;
-  grid-template-columns: 170px 170px;
+  grid-template-columns:  40% 40%;
+  column-gap: 20%;
   justify-items: center;
   align-items: center;
-  column-gap: 60px;
 }
 
 .price-container {
   display: grid;
-  grid-template-columns: 170px 170px;
+  grid-template-columns:  40% 40%;
+  column-gap: 20%;
   justify-items: center;
   align-items: center;
-  column-gap: 60px;
 }
 
 .button-container {
   display: grid;
-  grid-template-columns: 170px 170px;
+  grid-template-columns:  40% 40%;
+  column-gap: 20%;
   justify-items: center;
-  column-gap: 60px;
 }
 
 .card-label {
-  flex: 1;
-  max-width: 150px;
-  /* margin-bottom: 10%; */
   text-align: center;
   display: flex;
   align-items: center;
 }
 
-.grid-maker {
-  display: grid;
-  grid-template-areas: "";
-}
-
 .card-image {
-  max-width: 100%;
   height: auto;
   float: left;
   border-radius: 12%;
-  width: 150px;
+  width: 100%;
   transition: 100ms;
 }
 
@@ -111,7 +102,7 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
 
-  width: 70%;
+  width: 100%;
   height: 37px;
 
   margin-top: 10px;
@@ -132,27 +123,6 @@ body::-webkit-scrollbar {
 
 .card-price {
   margin-top: 10px;
-}
-
-.basket-button-container {
-  width: 100%;
-  margin-top: 10%;
-  position: sticky;
-  bottom: 0;   
-}
-
-.basket-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  color: black;
-  background-color: #FFBF00;
-
-  height: 3.5rem;
-
-  text-decoration: none;
 }
 
 #image-loader {
