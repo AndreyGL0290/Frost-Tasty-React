@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 380px){
+@media only screen and (max-width: 400px){
   .inner-container {
     display: grid;
     grid-template-columns: auto;
@@ -38,11 +38,11 @@ body::-webkit-scrollbar {
   }
 }
 
-@media only screen and (min-width: 380px){
+@media only screen and (min-width: 400px){
   .inner-container {
     display: grid;
     grid-template-columns: auto;
-    width: 360px;
+    width: 380px;
     gap: 7em;
   }
 }
