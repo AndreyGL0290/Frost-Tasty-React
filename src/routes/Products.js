@@ -49,7 +49,7 @@ const Products = () => {
         <div className="inner-container">
             {data.map(props => {
                 return (
-                    <ProductCard key={props.name} product={props}/>
+                    <ProductCard key={props[0].name} product={props}/>
                 )
             })}
         </div>
@@ -108,7 +108,6 @@ const CardFooter = (props) => {
     if (props.product.postfix) x = 1
 
     if (quantity === 0){
-        console.log(props.product)
         return (
             <button className="card-button" onClick={() => {
                 setQuantity(quantity + x)
@@ -124,28 +123,23 @@ const CardFooter = (props) => {
         let quantityPostfix = props.product.postfix || 'кг'
         return (
             <div className="product-menu-container">
-                <svg className="system-image" viewBox="0 0 100 100"
+                <div className="system-image" id="minus-image"
                 onClick={() => {
                     setQuantity(quantity - x)
                     basket.setQuantity(props.product.name, -x)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                     
                     if (Object.keys(basket.products).length === 0) props.state.setProducts([])
-                }}>
-                    <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="10"/>
-                </svg>
+                }}></div>
 
                 <span className="quantity-label" onDoubleClick={e => {e.preventDefault()}}>{quantity} {quantityPostfix.replace('₾/', '')}</span>
 
-                <svg className="system-image" viewBox="0 0 100 100"
+                <div className="system-image" id="plus-image"
                 onClick={() => {
                     setQuantity(quantity + x)
                     basket.setQuantity(props.product.name, x)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
-                }}>
-                    <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="10"/>
-                    <line x1="50" y1="0" x2="50" y2="100" stroke="black" stroke-width="10"/>
-                </svg>
+                }}></div>
             </div>
         )
     }

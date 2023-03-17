@@ -32,7 +32,7 @@ body::-webkit-scrollbar {
 .inner-container {
   display: grid;
   grid-template-columns: auto;
-  max-width: 360px;
+  max-width: 400px;
   gap: 100px 60px;
 }
 
@@ -55,14 +55,14 @@ body::-webkit-scrollbar {
 
 .label-container {
   display: grid;
-  grid-template-columns:  150px 150px;
+  grid-template-columns:  170px 170px;
   justify-items: center;
   column-gap: 60px;
 }
 
 .image-container {
   display: grid;
-  grid-template-columns: 150px 150px;
+  grid-template-columns: 170px 170px;
   justify-items: center;
   align-items: center;
   column-gap: 60px;
@@ -70,7 +70,7 @@ body::-webkit-scrollbar {
 
 .price-container {
   display: grid;
-  grid-template-columns: 150px 150px;
+  grid-template-columns: 170px 170px;
   justify-items: center;
   align-items: center;
   column-gap: 60px;
@@ -78,7 +78,7 @@ body::-webkit-scrollbar {
 
 .button-container {
   display: grid;
-  grid-template-columns: 150px 150px;
+  grid-template-columns: 170px 170px;
   justify-items: center;
   column-gap: 60px;
 }

@@ -46,3 +46,11 @@
     justify-content: center;
     text-align: center;
 }
+
+#cross-image{
+    background-image: url(../../public/images/system/cross.png);
+}
+
+#eye-image{
+    background-image: url(../../public/images/system/eye.png);
+}
