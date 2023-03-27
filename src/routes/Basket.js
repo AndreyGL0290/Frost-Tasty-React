@@ -34,8 +34,9 @@ const Basket = () => {
 }
 
 const BasketCard = (props) => {
-    let price = props.product.price * props.product.quantity
-    if (!props.product.postfix) price = Math.ceil(price)
+    let price = (props.product.price * props.product.quantity).toFixed(2)
+    if (!props.product.postfix) price = Math.ceil(price).toFixed(2)
+    console.log(price)
 
     return (
         <div className='product-container'>
