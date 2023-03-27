@@ -57,7 +57,7 @@ const BasketCard = (props) => {
             </div>
             <div className='add-content-container'>
                 <span className='product-quantity'>{props.product.quantity} {(props.product.postfix || 'кг').replace('₾/', '')}</span>
-                <span className='product-price'>{price} ₾</span>
+                <span className='product-price'>{price.toFixed(2)} ₾</span>
             </div>
         </div>
     )
