@@ -11,7 +11,7 @@ const Basket = () => {
     if (!tg.MainButton.isVisible) tg.MainButton.show()
 
     let [x, setDelete] = useState(false)
-
+    // document.getElementsByClassName('middle-container')[0].style.justifyContent = 'center'
     if (Object.keys(basket.products).length === 0){
         tg.MainButton.hide()
         return (
@@ -26,7 +26,7 @@ const Basket = () => {
         <div className='basket-container'>
             {Object.values(basket.products).map(props => {
                 return (
-                    <BasketCard key={props.name} product={props} state={{x: x, setDelete: setDelete}}/>
+                    <BasketCard key={props.title} product={props} state={{x: x, setDelete: setDelete}}/>
                 )
             })}
         </div>
@@ -43,7 +43,7 @@ const BasketCard = (props) => {
                 <div className='images-container'>
                     <div className="system-image" id="cross-image"
                     onClick={() => {
-                        basket.deleteProduct(props.product.name)
+                        basket.deleteProduct(props.product.title)
                         props.state.setDelete(!props.state.x)
                     }}></div>
 
@@ -52,7 +52,7 @@ const BasketCard = (props) => {
                     </Link>
 
                 </div>
-                <span className='product-label'>{props.product.name}</span>
+                <span className='product-label'>{props.product.title}</span>
 
             </div>
             <div className='add-content-container'>

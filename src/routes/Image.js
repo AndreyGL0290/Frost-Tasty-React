@@ -9,7 +9,7 @@ const Image = props => {
     const location = useLocation()
 
     return (
-        <>
+        <div className="image-subcontainer">
           {!load ? (
             <div className="content-wrapper">
                 <div className="placeholder">
@@ -34,7 +34,8 @@ const Image = props => {
                 document.getElementsByTagName('body')[0].style.overflow = 'hidden'
               }}
             />
-        </>
+            <span className="image-label">{props.sub_title}</span>
+        </div>
     )
 }
 

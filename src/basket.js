@@ -4,22 +4,22 @@ class Basket{
         this.products = {}
     }
 
-    setQuantity(name, quantity){
-        this.products[name].quantity += quantity
-        if (this.products[name].quantity === 0) this.deleteProduct(name)
+    setQuantity(title, quantity){
+        this.products[title].quantity += quantity
+        if (this.products[title].quantity === 0) this.deleteProduct(title)
     }
 
-    addProduct(name, product, quantity){
-        this.products[name] = product
-        this.products[name].quantity = quantity
+    addProduct(title, product, quantity){
+        this.products[title] = product
+        this.products[title].quantity = quantity
     }
 
-    getProduct(name){
-        return this.products[name]
+    getProduct(title){
+        return this.products[title]
     }
 
-    deleteProduct(name){
-        delete this.products[name]
+    deleteProduct(title){
+        delete this.products[title]
     }
 }
 

@@ -27,20 +27,25 @@ const Products = () => {
     let data = []
     
     let category = location.hash.replace('#', '')
-    for (let i = 0; i < Math.ceil(Object.keys(menu[category]).length / 2); i++){
+    let products_list = {}
+    console.log(menu)
+    for (let i=0; i<Object.keys(menu[category]).length; i++){
+        console.log(typeof menu[category][Object.keys(menu[category])[i]], menu[category][Object.keys(menu[category])[i]])
+        if (typeof menu[category][Object.keys(menu[category])[i]] === 'object') products_list[Object.keys(menu[category])[i]] = menu[category][Object.keys(menu[category])[i]]
+    }
+    console.log(products_list)
+    for (let i = 0; i < Math.ceil(Object.keys(products_list).length / 2); i++){
         let sub_data = []
         for (let j = i*2; j < 2*(i + 1); j++){
-            if (typeof menu[category][Object.keys(menu[category])[j]] === 'object') {
-
-                if (basket.getProduct(menu[category][Object.keys(menu[category])[j]].name)) {
-                    menu[category][Object.keys(menu[category])[j]].state = {products: products, setProducts: setProducts}
-                    sub_data.push(menu[category][Object.keys(menu[category])[j]])
-                    continue
-                }
-                menu[category][Object.keys(menu[category])[j]].parent = category
-                menu[category][Object.keys(menu[category])[j]].state = {products: products, setProducts: setProducts}
-                sub_data.push(menu[category][Object.keys(menu[category])[j]])
+            if (!Object.keys(products_list)[j]) continue
+            if (basket.getProduct(menu[category][Object.keys(products_list)[j]].title)) {
+                menu[category][Object.keys(products_list)[j]].state = {products: products, setProducts: setProducts}
+                sub_data.push(menu[category][Object.keys(products_list)[j]])
+                continue
             }
+            menu[category][Object.keys(products_list)[j]].parent = category
+            menu[category][Object.keys(products_list)[j]].state = {products: products, setProducts: setProducts}
+            sub_data.push(menu[category][Object.keys(products_list)[j]])
         }
         if (sub_data.length !== 0) data.push(sub_data)
     }
@@ -49,7 +54,7 @@ const Products = () => {
         <div className="inner-container">
             {data.map(props => {
                 return (
-                    <ProductCard key={props[0].name} product={props}/>
+                    <ProductCard key={props[0].title} product={props}/>
                 )
             })}
         </div>
@@ -63,12 +68,12 @@ const ProductCard = (props) => {
     if (props.length === 2) return (
         <div className="cards">
             <div className="label-container">
-                <span className="card-label">{props[0].name}</span>
-                <span className="card-label">{props[1].name}</span>
+                <span className="card-label">{props[0].title}</span>
+                <span className="card-label">{props[1].title}</span>
             </div>
             <div className="image-container">
-                <Image src={process.env.PUBLIC_URL + props[0].imagePath} />
-                <Image src={process.env.PUBLIC_URL + props[1].imagePath} />
+                <Image src={process.env.PUBLIC_URL + props[0].imagePath} sub_title={props[0].sub_title}/>
+                <Image src={process.env.PUBLIC_URL + props[1].imagePath} sub_title={props[1].sub_title}/>
             </div>
             <div className="price-container">
                 <span className="card-price">{props[0].price + ' ' + (props[0].postfix || '₾/кг')}</span>
@@ -83,10 +88,10 @@ const ProductCard = (props) => {
     else return (
         <div className="cards">
             <div className="label-container">
-                <span className="card-label">{props[0].name}</span>
+                <span className="card-label">{props[0].title}</span>
             </div>
             <div className="image-container">
-                <Image src={process.env.PUBLIC_URL + props[0].imagePath} />
+                <Image src={process.env.PUBLIC_URL + props[0].imagePath} sub_title={props[0].sub_title}/>
             </div>
             <div className="price-container">
                 <span className="card-price">{props[0].price + ' ' + (props[0].postfix || '₾/кг')}</span>
@@ -100,19 +105,18 @@ const ProductCard = (props) => {
 
 const CardFooter = (props) => {
     let startValue
-    if (basket.products[props.product.name]) startValue = basket.products[props.product.name].quantity
+    if (basket.products[props.product.title]) startValue = basket.products[props.product.title].quantity
     else startValue = 0
     const [quantity, setQuantity] = useState(startValue)
 
-    let x = 0.5
-    if (props.product.postfix) x = 1
+    let x = props.product.measure || 0.5
 
     if (quantity === 0){
         return (
             <button className="card-button" onClick={() => {
                 setQuantity(quantity + x)
                 
-                basket.addProduct(props.product.name, {name: props.product.name, parent: props.product.parent, price: props.product.price, postfix: props.product.postfix}, x)
+                basket.addProduct(props.product.title, {title: props.product.title, parent: props.product.parent, price: props.product.price, postfix: props.product.postfix}, x)
                 window.sessionStorage.setItem('products', JSON.stringify(basket.products))
 
                 if (Object.keys(basket.products).length <= 1) props.state.setProducts(Object.keys(basket.products))                
@@ -126,7 +130,7 @@ const CardFooter = (props) => {
                 <div className="system-image" id="minus-image"
                 onClick={() => {
                     setQuantity(quantity - x)
-                    basket.setQuantity(props.product.name, -x)
+                    basket.setQuantity(props.product.title, -x)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                     
                     if (Object.keys(basket.products).length === 0) props.state.setProducts([])
@@ -137,7 +141,7 @@ const CardFooter = (props) => {
                 <div className="system-image" id="plus-image"
                 onClick={() => {
                     setQuantity(quantity + x)
-                    basket.setQuantity(props.product.name, x)
+                    basket.setQuantity(props.product.title, x)
                     window.sessionStorage.setItem('products', JSON.stringify(basket.products))
                 }}></div>
             </div>

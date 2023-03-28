@@ -1,35 +1,37 @@
 const menu = {
     Category1:
     {   
-        name: "Пельмени",
+        title: "Пельмени",
+        sub_title: "",
         imagePath: "/images/products/Пельмени.png",
         Content1:
         {
-            name: "Пельмени Свинина & Говядина",
+            title: "Пельмени Свинина & Говядина",
+            sub_title: "",
             imagePath: "/images/products/Пельмени.png",
-            info: "Состав:\nСвинина,Говядина,Лук,Вода,Соль,Специи",
             price: 19
         },
 
         Content2:
         {
-            name: "Пельмени Говядина",
+            title: "Пельмени Говядина",
+            sub_title: "",
             imagePath: "/images/products/Пельмени.png",
-            info: "Состав:\nТесто пельменное,Говядина,Лук,Вода,Соль,Специи",
             price: 24
         },
         
         Content3:
         {
-            name: "Пельмени Курица",
+            title: "Пельмени Курица",
+            sub_title: "",
             imagePath: "/images/products/Пельмени.png",
-            info: "Состав:\nМясо курицы,Лук,Вода,Соль,Специи",
             price: 18
         },
 
         Content4:
         {
-            name: "Пельмени с перцем чили & зеленью",
+            title: "Пельмени с перцем чили & зеленью",
+            sub_title: "",
             imagePath: "/images/products/Пельмени.png",
             price: 24
         }
@@ -37,181 +39,194 @@ const menu = {
 
     Category2:
     {
-        name: "Вареники",
+        title: "Вареники",
+        sub_title: "",
         imagePath: "/images/products/Вареники.png",
         Content1:
         {
-            name: "Вареники Картофель",
+            title: "Вареники Картофель",
+            sub_title: "",
             imagePath: "/images/products/Вареники.png",
-            info: "Состав:\nТесто для вареников,Картофель,Масло из коровьих сливок,Яйцо,Соль",
             price: 13
         },
 
         Content2:
         {
-            name: "Вареники Картофель & Грибы",
+            title: "Вареники Картофель & Грибы",
+            sub_title: "",
             imagePath: "/images/products/Вареники.png",
-            info: "Состав:\nТесто,Картофель,Шампиньоны,Лук,Масло подсолнечное,Соль,Специи",
             price: 16
         },
 
         Content3:
         {
-            name: "Вареники Капуста & Шпик",
+            title: "Вареники Капуста & Шпик",
+            sub_title: "",
             imagePath: "/images/products/Вареники.png",
-            info: "Состав:\nТесто,Капуста квашеная,Шпик свинной,Лук,Соль,Специи",
             price: 18
         },
 
         Content4:
         {
-            name: "Вареники Сыр имеретинский",
+            title: "Вареники Сыр имеретинский",
+            sub_title: "",
             imagePath: "/images/products/Вареники.png",
-            info: "Состав:\nТесто,Сыр имеретинский,Яйцо,Соль,Специи",
             price: 19
         },
         Content5:
         {
-            name: "Вареники с творогом",
+            title: "Вареники с творогом",
+            sub_title: "",
             imagePath: "/images/products/Вареники.png",
-            info: "Состав:\nТесто,Сыр имеретинский,Яйцо,Соль,Специи",
             price: 18
         }
     },
 
     Category3:
     {
-        name: "Котлеты & Фрикадельки",
+        title: "Котлеты & Фрикадельки",
+        sub_title: "",
         imagePath: "/images/products/Котлеты.jpg",
         Content1:
         {
-            name: "Котлеты Куриные",
+            title: "Котлеты Куриные",
+            sub_title: "",
             imagePath: "/images/products/Котлеты куриные.jpg",
-            info: "Состав:\nФиле курицы,Лук,Соль,Перец,Мука,Яйцо куриное,Сухари панировочные из багета",
             price: 25
         },
 
         Content2:
         {
-            name: "Котлеты Домашние",
+            title: "Котлеты Домашние",
+            sub_title: "",
             imagePath: "/images/products/Котлеты домашние.jpg",
-            info: "Состав:\nСвинина,Говядина,Хлеб белый,Соль специи,Мука для панировки",
             price: 25
         },
 
         Content3:
         {
-            name: "Фрикадельки Куриные",
+            title: "Фрикадельки Куриные",
+            sub_title: "",
             imagePath: "/images/products/Фрикадельки куриные.jpg",
-            info: "Состав:\nМясо курицы,Лук,Зелень,Соль,Специи",
             price: 25
         },
         
         Content4:
         {
-            name: "Фрикадельки Свинина & Говядины",
+            title: "Фрикадельки Свинина & Говядины",
+            sub_title: "",
             imagePath: "/images/products/Фрикадельки свинина говядина.jpg",
-            info: "Состав:\nСвинина,Говядина,Лук,Зелень,Соль,Специи",
             price: 25
         },
 
         Content5:
         {
-            name: "Шницель куриный панированный в багете",
+            title: "Шницель куриный панированный в багете",
+            sub_title: "",
             imagePath: "/images/products/Шницель.jpg",
-            info: "Состав:\nФиле курицы,Яйцо,Соль,Специи,Мука,Сухари панировочные из багета",
             price: 25
         }
     },
     
     Category4:
     {
-        name: "Блины & Сырники",
+        title: "Блины & Сырники",
+        sub_title: "",
         imagePath: "/images/products/Блины фаршированные.jpg",
         Content1:
         {
-            name: "Блины фаршированные мясом",
+            title: "Блины фаршированные мясом",
+            sub_title: "",
             imagePath: "/images/products/Блины фаршированные.jpg",
-            info: "Состав:\nБлины,Свинина,Говядина,Лук,Масло растительное,Соль,Специи",
             price: 2.2.toFixed(2),
+            measure: 1,
             postfix: '₾/шт'
         },
         
         Content2:
         {
-            name: "Блины фаршированные творогом",
+            title: "Блины фаршированные творогом",
+            sub_title: "",
             imagePath: "/images/products/Блины с творогом.jpg",
-            info: "Состав:\nБлины,Творог из коровьего молока,Сахар ванильный,Сахар,Соль",
             price: 1.8.toFixed(2),
+            measure: 1,
             postfix: '₾/шт'
         },
 
         Content3:
         {
-            name: "Сырники творожные",
+            title: "Сырники творожные",
+            sub_title: "",
             imagePath: "/images/products/Сырники.jpg",
-            info: "Состав:\nТворог из коровьего молока,Яйцо,Соль,Сахар,Сахар ванильный,Мука",
             price: 2,
+            measure: 1,
             postfix: '₾/шт'
         }
     },
 
     Category5:
     {
-        name: "Салаты",
+        title: "Салаты",
+        sub_title: "",
         imagePath: "/images/products/Салаты и закуски.jpg",
         Content1:
         {
-            name: "Салат 'Оливье'",
+            title: "Салат 'Оливье'",
+            sub_title: "Без заправки",
             imagePath: "/images/products/Оливье.jpg",
-            info: "Состав:\nКартофель,Морковь,Яйцо,Колбаса вареная,Огурец соленый,Лук",
+            measure: 1,
             price: 30
         },
 
         Content2:
         {
-            name: "Салат 'Министерский'",
+            title: "Салат 'Министерский'",
+            sub_title: "Без заправки",
             imagePath: "/images/products/Министерский.jpg",
-            info: "Состав:\nГовядина,Лук,Масло растительное,Яйцо,Огурец соленый соль",
+            measure: 1,
             price: 40
         },
 
         Content3:
         {
-            name: "Салат 'Сельдь под шубой'",
+            title: "Салат 'Сельдь под шубой'",
+            sub_title: "",
             imagePath: "/images/products/Сельдь под шубой.jpg",
-            info: "Состав:\nСельдь соленая,Лук,Картофель,Яйцо,Морковь,Свекла,Майонез",
+            measure: 1,
             price: 30
         },
         
         Content4:
         {
-            name: "Салат с крабовыми палочками",
+            title: "Салат с крабовыми палочками",
+            sub_title: "Без заправки",
             imagePath: "/images/products/Салат с крабовыми палочками.png",
-            info: "Состав:\nКрабовые палочки,Яйцо,Кукуруза консервированая",
             price: 30
         }
     },
 
     Category6:
     {
-        name: "Пробные сеты",
+        title: "Пробные сеты",
+        sub_title: "",
         imagePath: "/images/products/Пробный сет undefined.jpg",
         Content1:
         {
-            name: "Пробный сет №1",
+            title: "Пробный сет №1",
+            sub_title: "",
             imagePath: "/images/products/Сет№1.png",
-            info: "Состав:\nПельмени Свинина & Говядина, 300г,Пельмени Говядина, 300г,Вареники Картофель, 300г,Вареники Мясо & Капуста, 300г,Котлеты Домашние, 4 шт.,Шницель куриный панированный в багете, 2 шт.,Блины фаршированные творогом, 4 шт.",
             price: 49,
+            measure: 1,
             postfix: '₾/шт'
         },
         
         Content2:
         {
-            name: "Пробный сет №2",
+            title: "Пробный сет №2",
+            sub_title: "",
             imagePath: "/images/products/Сет№2.png",
-            info: "Состав:\nПельмени Свинина & Говядина, 300г,Пельмени Курица, 300г,Вареники Картофель & Грибы, 300г,Вареники Сыр имеретинский, 300г,Котлеты Куриные, 4 шт.,Блины фаршированны мясом, 4 шт.,Сырники, 4 шт.",
             price: 49,
+            measure: 1,
             postfix: '₾/шт'
         }
     }

@@ -78,6 +78,17 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 
+.image-subcontainer{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.image-label{
+  color: grey;
+  font-size: 14px;
+}
+
 .price-container {
   display: grid;
   grid-template-columns:  40% 40%;
