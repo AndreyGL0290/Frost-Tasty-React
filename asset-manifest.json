@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Frost-Tasty-React/static/css/main.c56d0f66.css",
-    "main.js": "/Frost-Tasty-React/static/js/main.8602bc35.js",
+    "main.css": "/Frost-Tasty-React/static/css/main.21302357.css",
+    "main.js": "/Frost-Tasty-React/static/js/main.1623be0b.js",
     "static/js/787.1152285b.chunk.js": "/Frost-Tasty-React/static/js/787.1152285b.chunk.js",
     "index.html": "/Frost-Tasty-React/index.html",
-    "main.c56d0f66.css.map": "/Frost-Tasty-React/static/css/main.c56d0f66.css.map",
-    "main.8602bc35.js.map": "/Frost-Tasty-React/static/js/main.8602bc35.js.map",
+    "main.21302357.css.map": "/Frost-Tasty-React/static/css/main.21302357.css.map",
+    "main.1623be0b.js.map": "/Frost-Tasty-React/static/js/main.1623be0b.js.map",
     "787.1152285b.chunk.js.map": "/Frost-Tasty-React/static/js/787.1152285b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c56d0f66.css",
-    "static/js/main.8602bc35.js"
+    "static/css/main.21302357.css",
+    "static/js/main.1623be0b.js"
   ]
 }
